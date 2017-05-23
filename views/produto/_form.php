@@ -18,7 +18,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_categoria')->textInput() ?>
 
-    <?= $form->field($model, 'valor')->textInput() ?>
+    <?= $form->field($model, 'preco')->textInput() ?>
+
+    <?= $form->field($model, 'id_deposito')->textInput() ?>
+
+    <?= $form->field($model, 'quantidade')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

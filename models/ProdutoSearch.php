@@ -18,8 +18,9 @@ class ProdutoSearch extends Produto
     public function rules()
     {
         return [
-            [['id_produto', 'id_categoria', 'valor'], 'integer'],
+            [['id_produto', 'id_categoria', 'id_deposito', 'quantidade'], 'integer'],
             [['produto', 'descricao'], 'safe'],
+            [['preco'], 'number'],
         ];
     }
 
@@ -61,7 +62,9 @@ class ProdutoSearch extends Produto
         $query->andFilterWhere([
             'id_produto' => $this->id_produto,
             'id_categoria' => $this->id_categoria,
-            'valor' => $this->valor,
+            'preco' => $this->preco,
+            'id_deposito' => $this->id_deposito,
+            'quantidade' => $this->quantidade,
         ]);
 
         $query->andFilterWhere(['like', 'produto', $this->produto])

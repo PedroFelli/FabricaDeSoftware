@@ -23,6 +23,12 @@ $config = [
         'db' => $db,
     ],
     'params' => $params,
+      'view' =>array(
+    'theme' => array(
+    'pathMap' => array('@app/views' => '@wwwroot/themes/THEME_FOLDER_NAME'),
+    'baseUrl'   => '@www/themes/THEME_FOLDER_NAME'
+  )
+)
     /*
     'controllerMap' => [
         'fixture' => [ // Fixture generation command line.

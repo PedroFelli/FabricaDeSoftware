@@ -11,7 +11,9 @@ use Yii;
  * @property string $produto
  * @property string $descricao
  * @property integer $id_categoria
- * @property integer $valor
+ * @property double $preco
+ * @property integer $id_deposito
+ * @property integer $quantidade
  */
 class Produto extends \yii\db\ActiveRecord
 {
@@ -29,8 +31,9 @@ class Produto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['produto', 'descricao', 'id_categoria'], 'required'],
-            [['id_categoria', 'valor'], 'integer'],
+            [['produto', 'descricao', 'id_categoria', 'id_deposito'], 'required'],
+            [['id_categoria', 'id_deposito', 'quantidade'], 'integer'],
+            [['preco'], 'number'],
             [['produto'], 'string', 'max' => 45],
             [['descricao'], 'string', 'max' => 60],
         ];
@@ -46,7 +49,9 @@ class Produto extends \yii\db\ActiveRecord
             'produto' => 'Produto',
             'descricao' => 'Descricao',
             'id_categoria' => 'Id Categoria',
-            'valor' => 'Valor',
+            'preco' => 'Preco',
+            'id_deposito' => 'Id Deposito',
+            'quantidade' => 'Quantidade',
         ];
     }
 }

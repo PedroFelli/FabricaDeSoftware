@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +28,12 @@ public class Produto implements Serializable{
 	@Column(name="nome")
 	private String nome;
 
+	@Column(name="quantidade")
+	private Integer quantidade;
+	
+	@ManyToOne
+	@JoinColumn(name="id_deposito")
+	private Deposito deposito;
 	
 	
 	public Integer getId() {
@@ -59,10 +67,23 @@ public class Produto implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
-	
-	
-	
 
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Deposito getDeposito() {
+		return deposito;
+	}
+
+	public void setDeposito(Deposito deposito) {
+		this.deposito = deposito;
+	}
+	
+	
+	
 }

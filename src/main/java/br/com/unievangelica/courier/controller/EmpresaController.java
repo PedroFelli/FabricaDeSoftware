@@ -27,16 +27,5 @@ public class EmpresaController extends GenericControllerImpl<Empresa, Integer>{
 		this.service = service;
 	}
 	
-	
-	//	@RequestMapping(value="/salvar", method=RequestMethod.POST , consumes=MediaType.APPLICATION_JSON_VALUE)
-	//	public ResponseEntity<Produto> salvarProduto(@RequestBody Produto produto) throws Exception {
-	//		service.salvarProduto(produto);
-	//		return new ResponseEntity<>(produto, HttpStatus.OK);
-	//	}
-	
-	//	@RequestMapping(method=RequestMethod.GET, value="/buscarTeste/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	//	public ResponseEntity<Produto> buscarPorId(@PathVariable Integer id) throws Exception{
-	//		return new ResponseEntity<>(service.buscarPorId(id), HttpStatus.OK);
-	//	}
 
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,8 +21,9 @@ public class Deposito implements Serializable {
 	@Column(name="capacidade")
 	private Integer capacidade;
 	
-//	@Column(name="id_filial")
-//	private Double id_filial;
+	@ManyToOne
+	@JoinColumn(name="id_filial")
+	private Filial filial;
 
 	public Integer getId() {
 		return id;
@@ -38,13 +41,13 @@ public class Deposito implements Serializable {
 		this.capacidade = capacidade;
 	}
 
-//	public Double getId_filial() {
-//		return id_filial;
-//	}
-//
-//	public void setId_filial(Double id_filial) {
-//		this.id_filial = id_filial;
-//	}
+	public Filial getFilial() {
+		return filial;
+	}
+
+	public void setFilial(Filial filial) {
+		this.filial = filial;
+	}
 
 	
 	

@@ -13,7 +13,6 @@ import javax.persistence.Table;
 
 public class Empresa implements Serializable{
 	
-
 	private static final long serialVersionUID = 4707552489735105652L;
 
 	@Id
@@ -22,6 +21,9 @@ public class Empresa implements Serializable{
 	
 	@Column(name="cnpj")
 	private Integer cnpj;
+	
+	@Column(name="razao_social")
+	private String razaoSocial;	
 	
 	@Column(name="endereco")
 	private String endereco;
@@ -44,6 +46,15 @@ public class Empresa implements Serializable{
 	public void setCnpj(Integer cnpj) {
 		this.cnpj = cnpj;
 	}
+	
+
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
 
 	public String getEndereco() {
 		return endereco;
@@ -61,8 +72,8 @@ public class Empresa implements Serializable{
 		this.telefone = telefone;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+
+	
+	
 
 }

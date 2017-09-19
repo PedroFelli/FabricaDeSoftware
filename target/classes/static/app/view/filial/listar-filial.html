@@ -1,0 +1,122 @@
+
+    <div class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+        <div ng-include="'app/view/header.html'"></div>
+     
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div ng-include="'app/view/sidebar.html'"></div>
+
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <!-- BEGIN THEME PANEL -->
+                   
+                    <h1 class="page-title"> Depósitos
+<!--                         <small>statistics, charts, recent events and reports</small> -->
+                    </h1>
+                     <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="icon-home"></i>
+                                <a href="index.html">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="#">Cadastros</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <span>Depósitos</span>
+                            </li>
+                        </ul>
+                        <div class="page-toolbar">
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
+                                    <i class="fa fa-angle-down"></i>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-bell"></i> Action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-shield"></i> Another action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-user"></i> Something else here</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-bag"></i> Separated link</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+               
+                          <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet light ">
+                                <div class="portlet-title">
+                                    <div class="caption font-dark">
+                                        <i class="icon-settings font-dark"></i>
+                                        <span class="caption-subject bold uppercase"> Filial</span>
+                                    </div>
+                                    <div class="actions">
+                                         <button data-toggle="modal" href="#modal_filial" ng-click="cadastrarDeposito()" class="btn sbold green"> Adicionar Filial
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                                      <thead>
+						                  <tr>
+						                    <th>Ações</th>
+						                    <th>Id</th>
+						                    <th>Nome</th>
+						                    <th>Endere&ccedil;o</th>
+						                    <th>Empresa</th>
+						                  </tr>
+						                </thead>
+						                	<tbody>
+												<tr ng-repeat="filial in filiais" on-finish-render="ngRepeatFinished">
+													<td><a style="margin-right: 15px;" ng-click="deletarDeposito(deposito.id)"><i class="fa fa-trash-o"></i> </a>
+													<a data-toggle="modal" data-target="#modal_deposito" ng-click="alterarDeposito(deposito.id)" data-backdrop="static"><i class="fa fa-pencil-square-o"></i></a></td>
+													<td>{{filial.id}}</td>
+													<td>{{filial.nome}}</td>
+													<td>{{filial.endereco}}</td>
+													<td class="text-center"><span class="badge badge-sm badge-info ">{{filial.deposito.id}}</span></td>
+													
+													
+												</tr>
+											</tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END EXAMPLE TABLE PORTLET-->
+                        </div>
+                    </div>
+
+                </div>
+                
+
+            </div>
+         
+            
+        </div>
+
+    </div>
+  
+   <div ng-include="'app/view/filial/cadastrar-filial.html'"></div>
+

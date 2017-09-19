@@ -26,6 +26,10 @@ app.config(['$routeProvider',
           templateUrl: 'app/view/deposito/listar-deposito.html',
           controller: 'depositoController'
         })
+        .when('/admin/cadastro/filial', {
+          templateUrl: 'app/view/filial/listar-filial.html',
+          controller: 'filialController'
+        })
         .otherwise({
     		redirectTo: "/"
     	});

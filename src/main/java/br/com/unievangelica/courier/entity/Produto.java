@@ -31,7 +31,7 @@ public class Produto implements Serializable{
 	@Column(name="quantidade")
 	private Integer quantidade;
 	
-	@ManyToOne
+	@ManyToOne(optional = true)
 	@JoinColumn(name="id_deposito")
 	private Deposito deposito;
 	

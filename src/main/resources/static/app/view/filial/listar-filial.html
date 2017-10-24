@@ -17,7 +17,7 @@
                     <!-- BEGIN PAGE HEADER-->
                     <!-- BEGIN THEME PANEL -->
                    
-                    <h1 class="page-title"> Depósitos
+                    <h1 class="page-title"> Filial
 <!--                         <small>statistics, charts, recent events and reports</small> -->
                     </h1>
                      <div class="page-bar">
@@ -32,7 +32,7 @@
                                 <i class="fa fa-angle-right"></i>
                             </li>
                             <li>
-                                <span>Depósitos</span>
+                                <span>Filial</span>
                             </li>
                         </ul>
                         <div class="page-toolbar">
@@ -73,7 +73,7 @@
                                         <span class="caption-subject bold uppercase"> Filial</span>
                                     </div>
                                     <div class="actions">
-                                         <button data-toggle="modal" href="#modal_filial" ng-click="cadastrarDeposito()" class="btn sbold green"> Adicionar Filial
+                                         <button data-toggle="modal" href="#modal_filial" ng-click="cadastrarFilial()" class="btn sbold green"> Adicionar Novo
                                                         <i class="fa fa-plus"></i>
                                                     </button>
                                     </div>
@@ -91,12 +91,12 @@
 						                </thead>
 						                	<tbody>
 												<tr ng-repeat="filial in filiais" on-finish-render="ngRepeatFinished">
-													<td><a style="margin-right: 15px;" ng-click="deletarDeposito(deposito.id)"><i class="fa fa-trash-o"></i> </a>
-													<a data-toggle="modal" data-target="#modal_deposito" ng-click="alterarDeposito(deposito.id)" data-backdrop="static"><i class="fa fa-pencil-square-o"></i></a></td>
+													<td><a style="margin-right: 15px;" ng-click="deletarFilial(filial.id)"><i class="fa fa-trash-o"></i> </a>
+													<a data-toggle="modal" data-target="#modal_filial" ng-click="alterarFilial(filial.id)" data-backdrop="static"><i class="fa fa-pencil-square-o"></i></a></td>
 													<td>{{filial.id}}</td>
 													<td>{{filial.nome}}</td>
 													<td>{{filial.endereco}}</td>
-													<td class="text-center"><span class="badge badge-sm badge-info ">{{filial.deposito.id}}</span></td>
+													<td class="text-center"><span class="badge badge-sm badge-info ">{{filial.empresa.razaoSocial}}</span></td>
 													
 													
 												</tr>

@@ -1,4 +1,67 @@
-app.controller("headerController", function($scope,$http) {
+app.controller("headerController", function($scope,$http, $window, $location) {	
+//	$scope.logout = function(){
+//		firebase.auth().signOut();
+//		localStorage.clear();
+//		 $window.location.href = '#/';
+//	}
+//	
+//	
+//
+//
+//	 //get elements
+//	 const txtEmail = document.getElementById('txtEmail');
+//	 const txtPassword = document.getElementById('txtPassword');
+//	 const btnLogin = document.getElementById('btnLogin');
+//	 const btnSignUp = document.getElementById('btnSignUp');
+////	 const btnLogout = document.getElementById('btnLogout');
+//	 const navbar = document.getElementById('navbar')
+//
+//	 // add login event
+//
+//	btnLogin.addEventListener('click', e => {
+//	 //get email and pass
+//	 const email = txtEmail.value;
+//	 const pass  = txtPassword.value;
+//	 const auth = firebase.auth();
+//	 //sing in
+//	 const promise = auth.signInWithEmailAndPassword(email, pass);
+//	 promise.catch (e => window.alert(e.message));
+//	 
+//	});
+//
+//	 // add signup event
+//	 btnSignUp.addEventListener('click', e => {
+//	 //get email and pass
+//	 const email = txtEmail.value;
+//	 const pass  = txtPassword.value;
+//	 const auth = firebase.auth();
+//	 //sing in
+//	 const promise = auth.createUserWithEmailAndPassword(email, pass);
+//	 promise.catch (e => window.alert(e.message));
+//	 });
+//
+////	 btnLogout.addEventListener('click', e => {
+////	   firebase.auth().signOut();
+////	 });
+//
+//	//localStorage.setItem('firebase', JSON.stringify(firebase));
+//	 firebase.auth().onAuthStateChanged(firebaseUser => {
+//	   if(firebaseUser){
+//	   
+////	     console.log(firebaseUser);
+//	     $window.location.href = '#/admin';
+////	 	$location.path("#/admin")
+//	     
+//	    
+//	     btnLogout.classList.remove('hide');
+//
+//	   } else {
+//	     console.log('not logged in');
+//	     btnLogout.classList.add('hide');
+//	   }
+//	 });
+
+
 	
 	var Layout = function () {
 

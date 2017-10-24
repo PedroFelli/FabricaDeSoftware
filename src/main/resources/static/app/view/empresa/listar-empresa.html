@@ -17,7 +17,7 @@
                     <!-- BEGIN PAGE HEADER-->
                     <!-- BEGIN THEME PANEL -->
                    
-                    <h1 class="page-title"> Usuários
+                    <h1 class="page-title"> Empresas
 <!--                         <small>statistics, charts, recent events and reports</small> -->
                     </h1>
                      <div class="page-bar">
@@ -32,7 +32,7 @@
                                 <i class="fa fa-angle-right"></i>
                             </li>
                             <li>
-                                <span>Usuário</span>
+                                <span>Empresas</span>
                             </li>
                         </ul>
                         <div class="page-toolbar">
@@ -70,10 +70,10 @@
                                 <div class="portlet-title">
                                     <div class="caption font-dark">
                                         <i class="icon-settings font-dark"></i>
-                                        <span class="caption-subject bold uppercase"> Usuário</span>
+                                        <span class="caption-subject bold uppercase"> Empresas</span>
                                     </div>
                                     <div class="actions">
-                                         <button data-toggle="modal" href="#modal_usuario" ng-click="cadastrarUsuario()" class="btn sbold green"> Adicionar Novo
+                                         <button data-toggle="modal" href="#modal_empresa" ng-click="cadastrarEmpresa()" class="btn sbold green"> Adicionar Novo
                                                         <i class="fa fa-plus"></i>
                                                     </button>
                                     </div>
@@ -84,21 +84,21 @@
 						                  <tr>
 						                    <th>Ações</th>
 						                    <th>Id</th>
-						                    <th>Nome</th>
-						                    <th>E-mail</th>
-						                    <th>Tipo Perfil</th>
+						                    <th>CNPJ</th>
+						                    <th>Razão Social</th>
+						                    <th>Endereço</th>
+						                    <th>Telefone</th>
 						                  </tr>
 						                </thead>
 						                	<tbody>
-												<tr ng-repeat="usuario in usuarios" on-finish-render="ngRepeatFinished">
-													<td><a style="margin-right: 15px;" ng-click="deletarUsuario(usuario.id)"><i class="fa fa-trash-o"></i> </a>
-													<a data-toggle="modal" data-target="#modal_usuario" ng-click="alterarUsuario(usuario.id)" data-backdrop="static"><i class="fa fa-pencil-square-o"></i></a></td>
-													<td>{{usuario.id}}</td>
-													<td>{{usuario.nome}}</td>
-													<td>{{usuario.email}}</td>
-													<td class="text-center"><span class="badge badge-sm badge-info ">{{usuario.tipoPerfil}}</span></td>
-													
-													
+												<tr ng-repeat="empresa in empresas" on-finish-render="ngRepeatFinished">
+													<td><a style="margin-right: 15px;" ng-click="deletarEmpresa(empresa.id)"><i class="fa fa-trash-o"></i> </a>
+													<a data-toggle="modal" data-target="#modal_empresa" ng-click="alterarEmpresa(empresa.id)" data-backdrop="static"><i class="fa fa-pencil-square-o"></i></a></td>
+													<td>{{empresa.id}}</td>
+													<td>{{empresa.cnpj}}</td>
+													<td>{{empresa.razaoSocial}}</td>
+													<td>{{empresa.endereco}}</td>
+													<td>{{empresa.telefone}}</td>
 												</tr>
 											</tbody>
                                     </table>
@@ -118,5 +118,5 @@
 
     </div>
   
-   <div ng-include="'app/view/pessoa/cadastrar-pessoa.html'"></div>
+   <div ng-include="'app/view/empresa/cadastrar-empresa.html'"></div>
 

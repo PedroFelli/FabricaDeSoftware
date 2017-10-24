@@ -4,8 +4,9 @@ app.controller("filialController", function($scope,$http) {
 	$scope.limparFilial = function () {
 		$scope.filial = {
 				id: undefined,
-				capacidade: undefined,
-				filial: {}
+				nome: undefined,
+				endereco: undefined,
+				empresa: {}
 		}
 	}
 
@@ -18,7 +19,7 @@ app.controller("filialController", function($scope,$http) {
 		
 		$http.get("filial/buscarTodos")
 		.success(function(response){
-			$scope.filial = response;
+			$scope.filiais = response;
 
 
 		})
@@ -112,19 +113,19 @@ app.controller("filialController", function($scope,$http) {
 
 	    }
 	
-	$scope.cadastrarDeposito = function() {
-		$scope.limparDeposito();
+	$scope.cadastrarFilial = function() {
+		$scope.limparFilial();
 
 		$scope.alterando = false;
 		
-		$scope.salvar = function(deposito){
-			$http.post("deposito/salvar", deposito)
+		$scope.salvar = function(filial){
+			$http.post("filial/salvar", filial)
 			.success(function(response){
-				$('#modal_deposito').modal('hide')
+				$('#modal_filial').modal('hide')
 				$('body').removeClass('modal-open');
 				$('.modal-backdrop').remove();
 				
-				$scope.buscarDepositos()
+				$scope.buscarFilial()
 			})
 			.error(function(error){
 
@@ -135,24 +136,24 @@ app.controller("filialController", function($scope,$http) {
 		
 	}
 	
-	$scope.alterarDeposito = function (id){
+	$scope.alterarFilial = function (id){
 		$scope.alterando = true;
-		$http.get("deposito/buscar/" + id)
+		$http.get("filial/buscar/" + id)
 		.success(function(response){
-			$scope.deposito = response;
+			$scope.filial = response;
 		})
 		.error(function(error){
 
 		});
 		
-		$scope.salvar = function(deposito){
-			$http.post("deposito/atualizar", deposito)
+		$scope.salvar = function(filial){
+			$http.post("filial/atualizar", filial)
 			.success(function(response){
-				$('#modal_deposito').modal('hide')
+				$('#modal_filial').modal('hide')
 				$('body').removeClass('modal-open');
 				$('.modal-backdrop').remove();
 				
-				$scope.buscarDepositos()
+				$scope.buscarFilial()
 			})
 			.error(function(error){
 				
@@ -161,10 +162,10 @@ app.controller("filialController", function($scope,$http) {
 		
 	}
 	
-	$scope.deletarDeposito = function (id){
-		$http.delete("deposito/deletar/" + id)
+	$scope.deletarFilial = function (id){
+		$http.delete("filial/deletar/" + id)
 		.success(function(response){
-			$scope.buscarDepositos();
+			$scope.buscarFilial();
  		})
 		.error(function(error){
 

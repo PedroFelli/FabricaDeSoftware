@@ -4,6 +4,17 @@ var app = angular.module("courierApp", ['ngRoute']);
 app.config(['$routeProvider',
     function($routeProvider) {
 
+	// Initialize Firebase
+	 var config = {
+	   apiKey: "AIzaSyCnb1-6ifibViQZp_K0y3qhrdDrIZvGTKE",
+	   authDomain: "gladiatorapp-627ea.firebaseapp.com",
+	   databaseURL: "https://gladiatorapp-627ea.firebaseio.com",
+	   projectId: "gladiatorapp-627ea",
+	   storageBucket: "gladiatorapp-627ea.appspot.com",
+	   messagingSenderId: "901467024091"
+	 };
+	 firebase.initializeApp(config);
+	
       $routeProvider
       .when('/', {
           templateUrl: 'app/view/login/login.html',
@@ -29,6 +40,14 @@ app.config(['$routeProvider',
         .when('/admin/cadastro/filial', {
           templateUrl: 'app/view/filial/listar-filial.html',
           controller: 'filialController'
+        })
+        .when('/admin/cadastro/empresa', {
+          templateUrl: 'app/view/empresa/listar-empresa.html',
+          controller: 'empresaController'
+        })
+        .when('/admin/contato', {
+          templateUrl: 'app/view/contato/contato.html',
+          controller: 'contatoController'
         })
         .otherwise({
     		redirectTo: "/"

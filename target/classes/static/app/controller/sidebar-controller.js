@@ -8,6 +8,9 @@ app.controller("sidebarController", function($scope,$http,$location) {
 		var cadastro = document.getElementById("cadastro");
 		cadastro.className += "nav-item";
 		
+		var contato = document.getElementById("contato");
+		contato.className = "nav-item";
+		
 	} else if($location.path().startsWith('/admin/cadastro')){
 		
 		var cadastro = document.getElementById("cadastro");
@@ -15,8 +18,22 @@ app.controller("sidebarController", function($scope,$http,$location) {
 		
 		var inicio = document.getElementById("inicio");
 		inicio.className = "nav-item";
+		
+		var contato = document.getElementById("contato");
+		contato.className = "nav-item";
 
+	} else if($location.path().startsWith('/admin/contato')){
+		
+		var cadastro = document.getElementById("cadastro");
+		cadastro.className += "nav-item";
+		
+		var inicio = document.getElementById("inicio");
+		inicio.className = "nav-item";
+		
+		var contato = document.getElementById("contato");
+		contato.className = "start active open";
 	}
+	
 	
 	
 });

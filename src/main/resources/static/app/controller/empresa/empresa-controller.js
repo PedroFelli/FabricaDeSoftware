@@ -1,26 +1,26 @@
-app.controller("pessoaController", function($scope,$http) {
+app.controller("empresaController", function($scope,$http) {
 	
 	
-	$scope.limparUsuario = function () {
-		$scope.usuario = {
+	$scope.limparEmpresa = function () {
+		$scope.empresa = {
 				id: undefined,
-				nome: undefined,
-				email: undefined,
-				tipoPerfil: undefined,
-				senha: undefined
+				cnpj: undefined,
+				razaoSocial: undefined,
+				endereco: undefined,
+				telefone: undefined
 		}
 	}
 
 	
-	$scope.buscarUsuarios = function(){
-		$scope.limparUsuario();
+	$scope.buscarEmpresas = function(){
+		$scope.limparEmpresa();
 		if(table!= undefined){
 			table.fnDestroy();
 		}
 		
-		$http.get("pessoa/buscarTodos")
+		$http.get("empresa/buscarTodos")
 		.success(function(response){
-			$scope.usuarios = response;
+			$scope.empresas = response;
 
 
 		})
@@ -31,7 +31,7 @@ app.controller("pessoaController", function($scope,$http) {
 		
 	}
 	
-	$scope.buscarUsuarios();
+	$scope.buscarEmpresas();
 	var table
 	$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 		
@@ -105,19 +105,19 @@ app.controller("pessoaController", function($scope,$http) {
 
 	    }
 	
-	$scope.cadastrarUsuario = function() {
-		$scope.limparUsuario();
+	$scope.cadastrarEmpresa = function() {
+		$scope.limparEmpresa();
 
 		$scope.alterando = false;
 		
-		$scope.salvar = function(usuario){
-			$http.post("pessoa/salvar", usuario)
+		$scope.salvar = function(empresa){
+			$http.post("empresa/salvar", empresa)
 			.success(function(response){
-				$('#modal_usuario').modal('hide')
+				$('#modal_empresa').modal('hide')
 				$('body').removeClass('modal-open');
 				$('.modal-backdrop').remove();
 				
-				$scope.buscarUsuarios()
+				$scope.buscarEmpresas()
 			})
 			.error(function(error){
 
@@ -128,24 +128,24 @@ app.controller("pessoaController", function($scope,$http) {
 		
 	}
 	
-	$scope.alterarUsuario = function (id){
+	$scope.alterarEmpresa = function (id){
 		$scope.alterando = true;
-		$http.get("pessoa/buscar/" + id)
+		$http.get("empresa/buscar/" + id)
 		.success(function(response){
-			$scope.usuario = response;
+			$scope.empresa = response;
 		})
 		.error(function(error){
 
 		});
 		
-		$scope.salvar = function(usuario){
-			$http.post("pessoa/atualizar", usuario)
+		$scope.salvar = function(empresa){
+			$http.post("empresa/atualizar", empresa)
 			.success(function(response){
-				$('#modal_usuario').modal('hide')
+				$('#modal_empresa').modal('hide')
 				$('body').removeClass('modal-open');
 				$('.modal-backdrop').remove();
 				
-				$scope.buscarUsuarios()
+				$scope.buscarEmpresas()
 			})
 			.error(function(error){
 				
@@ -154,16 +154,15 @@ app.controller("pessoaController", function($scope,$http) {
 		
 	}
 	
-	$scope.deletarUsuario = function (id){
-		$http.delete("pessoa/deletar/" + id)
+	$scope.deletarEmpresa = function (id){
+		$http.delete("empresa/deletar/" + id)
 		.success(function(response){
-			$scope.buscarUsuario();
+			$scope.buscarEmpresas();
  		})
 		.error(function(error){
 
 		});
 	}
-	
 	
 	
     

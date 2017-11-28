@@ -26,16 +26,16 @@ public class ProdutoController extends GenericControllerImpl<Produto, Integer>{
 	}
 	
 	
-//	@RequestMapping(value="/salvar", method=RequestMethod.POST , consumes=MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Produto> salvarProduto(@RequestBody Produto produto) throws Exception {
-//		service.salvarProduto(produto);
-//		return new ResponseEntity<>(produto, HttpStatus.OK);
-//	}
+	@RequestMapping(value="/adicionar", method=RequestMethod.POST , consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> adicionarEstoque(@RequestBody String json) throws Exception {
+		return new ResponseEntity<>(service.adicionarEstoque(json), HttpStatus.OK);
+	}
 	
-//	@RequestMapping(method=RequestMethod.GET, value="/buscarTeste/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Produto> buscarPorId(@PathVariable Integer id) throws Exception{
-//		return new ResponseEntity<>(service.buscarPorId(id), HttpStatus.OK);
-//	}
+	@RequestMapping(value="/remover", method=RequestMethod.POST , consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> removerEstoque(@RequestBody String json) throws Exception {
+		return new ResponseEntity<>(service.removerEstoque(json), HttpStatus.OK);
+	}
+	
 	
 
 }

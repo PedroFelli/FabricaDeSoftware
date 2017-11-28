@@ -49,6 +49,10 @@ app.config(['$routeProvider',
           templateUrl: 'app/view/contato/contato.html',
           controller: 'contatoController'
         })
+        .when('/admin/relatorios', {
+          templateUrl: 'app/view/relatorio/relatorio.html',
+          controller: 'relatorioController'
+        })
         .otherwise({
     		redirectTo: "/"
     	});

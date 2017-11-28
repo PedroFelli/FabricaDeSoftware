@@ -1,0 +1,122 @@
+
+    <div class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+        <div ng-include="'app/view/header.html'"></div>
+     
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div ng-include="'app/view/sidebar.html'"></div>
+
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <!-- BEGIN THEME PANEL -->
+                   
+                    <h1 class="page-title"> Relatórios
+<!--                         <small>statistics, charts, recent events and reports</small> -->
+                    </h1>
+                     <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="icon-home"></i>
+                                <a href="index.html">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <span>Relatórios</span>
+                            </li>
+                        </ul>
+                        <div class="page-toolbar">
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
+                                    <i class="fa fa-angle-down"></i>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-bell"></i> Action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-shield"></i> Another action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-user"></i> Something else here</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon-bag"></i> Separated link</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light portlet-fit ">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class=" icon-layers font-green"></i>
+                                        <span class="caption-subject font-green bold uppercase">Produtos no Depósito</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-cloud-upload"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-wrench"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div id="morris_chart_4" style="height:400px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet light bordered">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="icon-bar-chart font-green-haze"></i>
+                                                <span class="caption-subject bold uppercase font-green-haze">Espaço disponível nos Depositos </span>
+                                            </div>
+                                            <div class="tools">
+                                                <a href="javascript:;" class="collapse"> </a>
+                                                <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                                <a href="javascript:;" class="reload"> </a>
+                                                <a href="javascript:;" class="fullscreen"> </a>
+                                                <a href="javascript:;" class="remove"> </a>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                            <div id="chart_1" class="chart" style="height: 500px;"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                </div>
+                
+
+            </div>
+         
+            
+        </div>
+
+    </div>
+  
+   <div ng-include="'app/view/pessoa/cadastrar-pessoa.html'"></div>
+

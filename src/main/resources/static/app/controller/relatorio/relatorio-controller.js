@@ -5,10 +5,10 @@ app.controller("relatorioController", function($scope,$http) {
 	  new Morris.Donut({
 	    element: 'morris_chart_4',
 	    data: [
-	      {label: "Vassoura", value: 12},
-	      {label: "Sabão em pó", value: 10},
-	      {label: "Teste", value: 20},
-	      {label: "Disponível", value: 100}
+	      {label: "Vassoura", value: 10},
+	      {label: "Sabão em pó", value: 7},
+	      {label: "Coca-Cola", value: 15},
+	      {label: "Disponível", value: 68}
 	    ]
 	  });
 	  
